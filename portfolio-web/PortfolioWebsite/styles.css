@@ -1,0 +1,267 @@
+
+
+html, body {
+    height: 100%;
+    font-family: Verdana, sans-serif;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background: #ffc7de;
+    border-bottom: 1px solid #ccc;
+}
+
+nav button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    border: 1px solid #000;
+    background: white;
+    cursor: pointer;
+}
+
+nav .contact-btn {
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    /* allows wrapping on small screens */
+    padding: 40px;
+    gap: 20px;
+}
+
+.left-box {
+    padding: 1%;
+}
+.right-box {
+    width: 500px;
+    height: 700px;
+    border: 1px solid #ccc;
+    padding: 60px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: rgb(255, 242, 189);
+
+}
+
+.right-box h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.right-box p {
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #ffc7de;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: first baseline;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+footer .socials i {
+    font-size: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%
+}
+
+main {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.contact-btn {
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border: 1px solid black;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Projects Layout */
+
+
+
+.project h2 {
+    margin: 10px 0 5px;
+}
+
+.project p {
+    margin: 0;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+.project-text {
+    flex: 1;
+    padding-right: 20px;
+    text-align: center;
+    max-width: 300px;
+}
+
+.project-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.project-image img {
+    width: 300px;
+    height: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .left-box, .right-box {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .right-box {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .right-box h2 {
+        font-size: 24px;
+    }
+
+    .right-box p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+
+    }
+
+    footer .socials {
+        margin-top: 10px;
+    }
+}
+
+/* projects Page */
+
+.projects-section {
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects-left,
+.projects-right {
+    width: 100%;
+}
+
+.project-image {
+    height: 150px;
+}
+
+.project-container {
+    padding: 0 20px;
+}
+
+
+.project-text {
+    max-width: 100%;
+}
+
+footer {
+    flex-direction: column;
+}
