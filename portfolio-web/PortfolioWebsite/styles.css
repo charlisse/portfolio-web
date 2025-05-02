@@ -7,7 +7,9 @@ html, body {
     padding: 0%;
     display: flex;
     flex-direction: column;
+    background-color: #fdfdfd;
 }
+
 
 header {
     display: flex;
@@ -72,22 +74,27 @@ main {
     margin: 0 auto;
 }
 
+.image-only {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
 footer {
     background-color: #ffc7de;
     height: 80px;
     display: flex;
     align-items: center;
-    justify-content: first baseline;
+    justify-content: flex-start;
     padding: 0 20px;
     box-sizing: border-box;
 }
 
-
-footer .socials i {
-    font-size: 20px;
-    margin-left: 15px;
-    cursor: pointer;
-}
 
 nav a {
     position: relative;
@@ -138,9 +145,16 @@ main {
     transform: scale(1.05);
 }
 
+
 /* Projects Layout */
 
-
+.projects-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+}
 
 .project h2 {
     margin: 10px 0 5px;
@@ -167,8 +181,14 @@ main {
 }
 
 .project-container img {
+    flex: 1 1 300px;
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #0b4437;
+    border-radius: 10px;
+    background-color: rgb(212, 7, 103);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5.);
     height: auto;
     margin-bottom: 15px;
 }
@@ -183,10 +203,85 @@ main {
     margin-right: auto;
 }
 
+.project-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(255, 242, 189);
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+    background-color: rgb(255, 221, 87);
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Contact Page */
+
+.contact-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact-section h2 {
+    background-color: rgb(167, 213, 93);
+    color: black;
+    padding: 10px;
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form input, 
+form textarea {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+form input:focus, 
+form textarea:focus {
+    border-color: rgb(167, 213, 93);
+    outline: none;
+}
+
+.submit-button {
+    margin-top: 20px;
+    background-color: rgb(167, 213, 93);
+    color: black;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: rgb(105, 152, 28);
+}
+
+
 
 
 /* Responsive Layout */
-@media (max-width: 768px) {
+
+@media screen and (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -224,6 +319,11 @@ main {
         line-height: 1.5;
     }
 
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
     footer {
         flex-direction: column;
         align-items: center;
@@ -231,14 +331,12 @@ main {
         text-align: center;
 
     }
-
-    footer .socials {
-        margin-top: 10px;
-    }
 }
 
 /* projects Page */
 
+@media screen and (max-width: 768px) {
+    
 .projects-section {
     flex-direction: column;
     align-items: center;
@@ -264,4 +362,52 @@ main {
 
 footer {
     flex-direction: column;
+}
+
+}
+
+/* Contact page */
+
+@media screen and (max-width: 768px) {
+    
+    .contact-section {
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    form {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .contact-section h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    form label {
+        font-size: 14px;
+    }
+
+    form input, 
+    form textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .submit-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+
+.no-background {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    height: auto;
 }
